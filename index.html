@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12385a">
+<title>LAB Industrial v11.1.1 · Training Zoom · v11.1 · Visual Intelligence</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="svg-sprite" aria-hidden="true">
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10.5v6M12 7.3h.01"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5"/></symbol>
+  <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6M4.5 11.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 11l3.2-4M7 13l3.2 4M13.8 7l3.2 4M13.8 17l3.2-4"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><path d="M5 18V9m7 9V5m7 13v-6M3 18h18"/></symbol>
+  <symbol id="i-result" viewBox="0 0 24 24"><path d="M5 18l4-5 3 2 7-9M16 6h3v3"/></symbol>
+  <symbol id="i-analysis" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5M8 11h5M10.5 8.5V14"/></symbol>
+  <symbol id="i-decision" viewBox="0 0 24 24"><path d="M12 3v5m0 8v5M3 12h5m8 0h5M8.5 8.5l7 7m0-7l-7 7"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol>
+  <symbol id="i-collapse" viewBox="0 0 24 24"><path d="M9 9H4V4M15 9h5V4M9 15H4v5M15 15h5v5"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-mine" viewBox="0 0 24 24"><path d="M3 18h18M5 18l2-7 4 3 3-8 5 12M4 8h6M7 5v6"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20V10l6 3v-3l6 3V7l6 3v10H3zM7 16h2m3 0h2m3 0h2"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M7.5 16.5c5-2 3-7 8.8-9"/></symbol>
+  <symbol id="i-econ" viewBox="0 0 24 24"><path d="M4 18h16M6 15V9m4 6V5m4 10v-4m4 4V7"/></symbol>
+  <symbol id="i-io" viewBox="0 0 24 24"><path d="M5 5h5v5H5zM14 14h5v5h-5zM14 5h5v5h-5zM5 14h5v5H5zM10 7.5h4M7.5 10v4M16.5 10v4M10 16.5h4"/></symbol>
+  <symbol id="i-quality" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.7 8-7 10-4.3-2-7-5.4-7-10V6l7-3zM8.5 12l2.2 2.2L15.8 9"/></symbol>
+  <symbol id="i-inventory" viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4zm0 0v10l8 4 8-4V7M12 11v10"/></symbol>
+</svg>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand-block">
+      <div class="brand-mark"><svg><use href="#i-network"/></svg></div>
+      <div><span class="eyebrow">INGENIERÍA CIVIL INDUSTRIAL · UCN</span><strong>LAB Industrial</strong><small>AI Decision Studio · UCN</small></div>
+    </div>
+    <nav class="side-nav" aria-label="Navegación principal">
+      <button class="nav-btn active" data-tab="home"><svg><use href="#i-result"/></svg><span>Inicio</span></button>
+      <button class="nav-btn" data-tab="data"><svg><use href="#i-data"/></svg><span>Datos</span><i data-step-state="data"></i></button>
+      <button class="nav-btn" data-tab="networks"><svg><use href="#i-network"/></svg><span>Modelo</span><i data-step-state="model"></i></button>
+      <button class="nav-btn" data-tab="train"><svg><use href="#i-train"/></svg><span>Entrenamiento</span><i data-step-state="train"></i></button>
+      <button class="nav-btn" data-tab="results"><svg><use href="#i-result"/></svg><span>Resultados</span><i data-step-state="results"></i></button>
+      <button class="nav-btn" data-tab="analysis"><svg><use href="#i-analysis"/></svg><span>Análisis</span></button>
+      <button class="nav-btn" data-tab="decision"><svg><use href="#i-decision"/></svg><span>Decisión</span></button>
+    </nav>
+    <details class="side-more">
+      <summary>Más herramientas</summary>
+      <div>
+        <button class="nav-btn" data-tab="generalization">Generalización</button>
+        <button class="nav-btn" data-tab="stats">Estadística</button>
+        <button class="nav-btn" data-tab="advanced">GAN / Augmentation</button>
+        <button class="nav-btn" data-tab="lab75">Lab 7.5</button>
+        <button class="nav-btn" data-tab="concepts">Teoría / Secuencias</button>
+        <button class="nav-btn" data-tab="cnn">CNN · Visión artificial</button>
+      </div>
+    </details>
+    <div class="sidebar-footer">
+      <span>Nivel de estudio</span>
+      <div class="segmented study-level">
+        <button data-study-level="basic">Básico</button>
+        <button data-study-level="intermediate" class="primary">Intermedio</button>
+        <button data-study-level="advanced">Avanzado</button>
+      </div>
+      <small>Todo funciona offline. Python es opcional.</small>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn mobile-only" aria-label="Abrir menú"><svg><use href="#i-menu"/></svg></button>
+      <div class="topbar-title"><span id="viewEyebrow">LAB INDUSTRIAL</span><strong id="viewTitle">AI Decision Studio</strong></div>
+      <div class="topbar-actions">
+        <button id="quickSaveProjectBtn" class="ghost top-project-save" title="Guardar proyecto">Guardar proyecto</button>
+        <button id="themeBtn" class="icon-btn" title="Cambiar apariencia" aria-label="Cambiar apariencia"><svg><use href="#i-analysis"/></svg></button>
+        <button id="loadExampleBtn" class="ghost">Cargar ejemplo</button>
+        <button id="loadCsvBtn" class="primary"><svg><use href="#i-upload"/></svg>Abrir CSV</button>
+        <input id="csvInput" type="file" accept=".csv,.txt" hidden>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="tab-home" class="tab-page active">
+        <section class="project-hub" id="projectHub">
+          <div class="project-hub-head">
+            <div><span class="eyebrow">PROJECT HUB</span><h2>Tu laboratorio, guardado como proyecto</h2><p>Conserva datos, roles X/Y, arquitectura, hiperparámetros y modelos entrenados en un solo espacio.</p></div>
+            <div class="project-hub-actions">
+              <label class="project-name-field"><span>Proyecto actual</span><input id="projectNameInput" value="Nuevo análisis" maxlength="70"></label>
+              <button id="newProjectBtn">Nuevo</button>
+              <button id="saveProjectBtn" class="primary">Guardar</button>
+              <button id="exportProjectBtn">Exportar .lab</button>
+              <button id="importProjectBtn">Importar</button>
+              <input id="projectImportInput" type="file" accept=".lab,.json,application/json" hidden>
+            </div>
+          </div>
+          <div class="project-live-status">
+            <span class="project-live-dot"></span><strong id="projectSaveState">Proyecto local listo</strong>
+            <span id="projectDatasetSummary">Sin dataset</span>
+            <span id="projectModelSummary">Sin modelo entrenado</span>
+          </div>
+          <div id="recentProjects" class="recent-projects"></div>
+        </section>
+
+        <div class="hero-grid">
+          <article class="hero-copy">
+            <span class="eyebrow">MACHINE LEARNING PARA INGENIERÍA CIVIL INDUSTRIAL</span>
+            <h1>Convierte datos industriales en decisiones visibles.</h1>
+            <p>Un laboratorio interactivo de Machine Learning que detecta variables, recomienda arquitectura, explica el entrenamiento y traduce predicciones en decisiones industriales.</p>
+            <div class="hero-actions">
+              <button id="homeLoadCsvBtn" class="primary large"><svg><use href="#i-upload"/></svg>Subir CSV</button>
+              <button id="homeExampleBtn" class="secondary large">Explorar ejemplo</button>
+              <button id="goProblemPickerBtn" class="ghost large">Ver 50 problemáticas</button>
+            </div>
+            <div class="flow-chain" aria-label="Flujo del laboratorio">
+              <span>Datos</span><b>→</b><span>Red neuronal</span><b>→</b><span>Predicción</span><b>→</b><span>Decisión industrial</span>
+            </div>
+          </article>
+          <article class="hero-panel dynamic-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">ESTADO DEL PROYECTO</span><h2 id="homeDatasetName">Ejemplo industrial cargado</h2></div><button class="info-icon" data-info="table" aria-label="Información"><svg><use href="#i-info"/></svg></button></div>
+            <div class="home-status-grid">
+              <div><span>Problema</span><strong id="homeProblem">Analizando…</strong></div>
+              <div><span>Filas</span><strong id="homeRows">—</strong></div>
+              <div><span>Variables</span><strong id="homeCols">—</strong></div>
+              <div><span>Objetivo sugerido</span><strong id="homeTarget">—</strong></div>
+            </div>
+            <div class="mini-network"><svg id="homeNetworkSvg" viewBox="0 0 760 230" preserveAspectRatio="xMidYMid meet"></svg></div>
+            <button class="text-link" data-go="networks">Abrir modelo recomendado →</button>
+          </article>
+        </div>
+
+
+        <section class="sales-banner" aria-label="Presentación de producto">
+          <div class="sales-banner-copy">
+            <span class="eyebrow">LAB INDUSTRIAL · CONTINUOUS LEARNING</span>
+            <h2>Una experiencia diseñada para aprender, experimentar y decidir.</h2>
+            <p>Datos → Modelo → Entrenamiento → Explicabilidad → Decisión. Cada etapa conserva profundidad técnica con una interfaz comprensible para aula y empresa.</p>
+          </div>
+          <div class="sales-banner-kpis">
+            <div><span>01</span><b>Auto-detección</b><small>X, Y, tipo de problema y calidad</small></div>
+            <div><span>02</span><b>Aprendizaje visual</b><small>Red, loss y métricas interactivas</small></div>
+            <div><span>03</span><b>Decisión industrial</b><small>Predicción convertida en acción</small></div>
+          </div>
+        </section>
+
+        <section class="premium-feature-grid" aria-label="Capacidades principales">
+          <article class="premium-flip-card" tabindex="0">
+            <div class="premium-flip-inner">
+              <div class="premium-flip-face front"><span>DATA INTELLIGENCE</span><h3>Entiende tus datos</h3><p>Calidad, tipos, outliers, categóricas, split y exploración sin perderte en una planilla.</p><em>Toca para girar</em></div>
+              <div class="premium-flip-face back"><span>POR QUÉ IMPORTA</span><h3>Menos fricción</h3><p>La interfaz prioriza lo importante y deja el detalle técnico disponible cuando lo necesitas.</p></div>
+            </div>
+          </article>
+          <article class="premium-flip-card" tabindex="0">
+            <div class="premium-flip-inner">
+              <div class="premium-flip-face front"><span>NEURAL VISUALIZATION</span><h3>Ve cómo aprende</h3><p>Arquitectura, neuronas, conexiones y función de error se transforman en una experiencia tangible.</p><em>Toca para girar</em></div>
+              <div class="premium-flip-face back"><span>POR QUÉ IMPORTA</span><h3>Aprendizaje continuo</h3><p>Cada interacción refuerza conceptos de ML en lugar de esconderlos detrás de un botón.</p></div>
+            </div>
+          </article>
+          <article class="premium-flip-card" tabindex="0">
+            <div class="premium-flip-inner">
+              <div class="premium-flip-face front"><span>BUSINESS LAYER</span><h3>Del modelo a la acción</h3><p>Métricas, análisis y decisión quedan conectados en un mismo flujo de trabajo.</p><em>Toca para girar</em></div>
+              <div class="premium-flip-face back"><span>POR QUÉ IMPORTA</span><h3>Presentable y vendible</h3><p>Se presenta como un producto modular para empresa y formación, no como una demo académica.</p></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-block problem-picker-block" id="problemPickerCard">
+          <div class="section-heading"><div><span class="eyebrow">PASO 2 · PROBLEMÁTICA</span><h2>Elige qué quieres predecir</h2></div><p>Sube tus datos y luego selecciona uno de 50 problemas. La plantilla adapta Y, entradas X, capas ocultas, loss, optimizador y métricas.</p></div>
+          <article class="dynamic-card size-xl problem-bank-card" data-card>
+            <div class="problem-toolbar">
+              <label class="search-field"><span>Buscar problema</span><input id="problemSearch" type="search" placeholder="Ej.: falla, demanda, costo, calidad…"></label>
+              <label><span>Área</span><select id="problemAreaFilter"></select></label>
+              <span id="problemTemplateCount" class="toolbar-status">50 problemáticas</span>
+            </div>
+            <div class="problem-bank-layout">
+              <div id="problemTemplateGrid" class="problem-template-grid" aria-label="50 problemáticas industriales"></div>
+              <aside id="problemTemplateDetail" class="problem-template-detail"></aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">EJEMPLOS INDUSTRIALES</span><h2>Explora por contexto</h2></div><p>Usa un contexto para comprender qué podría predecir una red y qué decisión podría alimentar.</p></div>
+          <div class="context-grid">
+            <button class="context-card" data-context="Confiabilidad"><svg><use href="#i-mine"/></svg><strong>Confiabilidad</strong><span>Falla, MTBF, RUL, disponibilidad</span></button>
+            <button class="context-card" data-context="Producción"><svg><use href="#i-factory"/></svg><strong>Producción</strong><span>OEE, defectos, tiempos de ciclo</span></button>
+            <button class="context-card" data-context="Logística"><svg><use href="#i-route"/></svg><strong>Logística</strong><span>Viajes, retrasos, SLA, demanda</span></button>
+            <button class="context-card" data-context="Ingeco"><svg><use href="#i-econ"/></svg><strong>Ingeniería económica</strong><span>Costo, demanda, precio, riesgo</span></button>
+            <button class="context-card" data-context="IO"><svg><use href="#i-io"/></svg><strong>Investigación Operativa</strong><span>PLEM, VRP, scheduling, inventario</span></button>
+            <button class="context-card" data-context="Calidad"><svg><use href="#i-quality"/></svg><strong>Calidad</strong><span>Defectos, scrap, variables de proceso</span></button>
+            <button class="context-card" data-context="Inventario"><svg><use href="#i-inventory"/></svg><strong>Inventario</strong><span>Demanda, quiebre, lead time</span></button>
+          </div>
+        </section>
+
+        <section class="section-block" id="homeAnalysisBlock">
+          <div class="section-heading"><div><span class="eyebrow">ANÁLISIS AUTOMÁTICO</span><h2>Analizamos tu dataset</h2></div><p>Las sugerencias son editables. El laboratorio no asume que la última columna sea Y.</p></div>
+          <div id="datasetGuide" class="dataset-guide"></div>
+        </section>
+      </section>
+
+      <section id="tab-data" class="tab-page data-studio-page">
+        <div class="page-intro"><div><span class="eyebrow">1 · DATOS</span><h1>Entender antes de entrenar</h1><p>Primero define qué quieres predecir, revisa la calidad y explora las variables. La configuración técnica queda disponible sin saturar la vista.</p></div><div class="stage-status" id="dataStageStatus">Dataset cargado</div></div>
+
+        <article class="dynamic-card size-xl dataset-overview-card" data-card>
+          <div class="dataset-overview-main">
+            <div><span class="kicker">DATASET ACTUAL</span><h2 id="datasetOverviewName">Datos cargados</h2><p id="datasetOverviewStatus">Analizando estructura…</p></div>
+            <div class="dataset-overview-state"><span id="datasetReadyDot" class="ready-dot"></span><div><small>Estado</small><strong id="datasetReadyText">Revisando</strong></div></div>
+          </div>
+          <div class="dataset-kpi-strip">
+            <div><span>Filas</span><b id="datasetRowsKpi">0</b></div>
+            <div><span>Variables</span><b id="datasetColsKpi">0</b></div>
+            <div><span>Completitud</span><b id="datasetCompleteKpi">—</b></div>
+            <div><span>Problema</span><b id="datasetProblemKpi">—</b></div>
+          </div>
+        </article>
+
+        <section class="xy-focus-grid">
+          <article class="dynamic-card xy-card y-card" data-card>
+            <div class="card-topline"><div><span class="kicker">Y · VARIABLE OBJETIVO</span><h2 id="targetHeroName">Sin objetivo</h2><p id="targetHeroType">Selecciona qué deseas predecir.</p></div><button class="info-icon" data-info="table"><svg><use href="#i-info"/></svg></button></div>
+            <div id="targetReasoning" class="target-reasoning compact-reasoning"></div>
+            <div class="actions"><button id="applySuggestedRolesBtn" class="primary">Usar sugerencia</button><button id="editRolesBtn">Cambiar X / Y</button></div>
+          </article>
+          <article class="dynamic-card xy-card x-card" data-card>
+            <div class="card-topline"><div><span class="kicker">X · VARIABLES DE ENTRADA</span><h2><span id="xSelectedCount">0</span> seleccionadas</h2><p>Estas variables alimentarán las neuronas de entrada.</p></div></div>
+            <div id="xVariableSummary" class="x-variable-summary"></div>
+            <button id="editXVariablesBtn" class="secondary full">Editar variables de entrada</button>
+          </article>
+        </section>
+
+        <article class="dynamic-card quality-band-card" data-card>
+          <div class="quality-band-head"><div><span class="kicker">CALIDAD DE DATOS</span><h2><span id="dataQualityScore">—</span><small>/100</small></h2></div><div class="quality-progress"><i id="dataQualityBar"></i></div><button id="reviewDataBtn" class="secondary">Revisar problemas</button></div>
+          <div id="datasetAudit" class="audit-grid audit-band"></div>
+        </article>
+
+        <section class="data-explore-grid">
+          <article class="dynamic-card variable-explorer-card" data-card>
+            <div class="card-topline"><div><span class="kicker">EXPLORAR VARIABLE</span><h2>Distribución y perfil</h2><p>Selecciona una columna para entender su escala y comportamiento.</p></div></div>
+            <label class="explorer-select">Variable<select id="dataExplorerVariable"></select></label>
+            <div id="dataExplorerStats" class="explorer-stats"></div>
+            <div class="chart-box data-profile-chart"><canvas id="dataExplorerChart" width="920" height="300"></canvas></div>
+            <div id="dataExplorerNote" class="note"></div>
+          </article>
+
+          <article class="dynamic-card preview-card" data-card>
+            <div class="card-topline"><div><span class="kicker">VISTA PREVIA</span><h2>Primeras observaciones</h2><p id="dataPreviewCaption">Una muestra limpia antes de abrir el editor.</p></div></div>
+            <div class="table-wrap preview-table-wrap"><table id="dataPreviewTable"></table></div>
+            <button id="toggleDataEditorBtn" class="secondary full">Abrir editor de datos</button>
+          </article>
+        </section>
+
+        <article id="dataEditorPanel" class="dynamic-card size-xl data-editor-panel" data-card hidden>
+          <div class="card-topline"><div><span class="kicker">EDITOR DE DATOS</span><h2>Planilla editable</h2><p>Edita, busca, ordena y define el rol de cada columna. Se muestran pocas filas por página para mantener fluidez.</p></div><div class="card-actions"><button class="icon-btn" data-card-max title="Maximizar"><svg><use href="#i-expand"/></svg></button><button class="info-icon" data-info="table"><svg><use href="#i-info"/></svg></button></div></div>
+          <div class="table-toolbar">
+            <label class="search-field"><span>Buscar</span><input id="dataSearch" type="search" placeholder="Filtrar filas visibles"></label>
+            <button id="addRowBtn"><svg><use href="#i-plus"/></svg>Fila</button>
+            <button id="addColBtn"><svg><use href="#i-plus"/></svg>Columna</button>
+            <button id="columnWorkbenchBtn">Tipos y unidades</button>
+            <span id="tableFilterStatus" class="toolbar-status">Sin filtros</span>
+          </div>
+          <div class="table-wrap spreadsheet-wrap"><table id="dataTable"></table></div>
+          <div id="dataTablePager" class="data-table-pager"></div>
+          <div id="columnWorkbench" class="column-workbench"></div>
+        </article>
+
+        <article class="dynamic-card size-xl preparation-card" data-card>
+          <div class="card-topline"><div><span class="kicker">PREPARACIÓN PARA ENTRENAR</span><h2>Transformación y división</h2><p>Concentra aquí las decisiones técnicas que antes estaban repartidas por toda la página.</p></div><button class="info-icon" data-info="split"><svg><use href="#i-info"/></svg></button></div>
+          <div class="preparation-status-row">
+            <div><span>Variables</span><b id="prepVariablesState">Revisando</b></div>
+            <div><span>Calidad</span><b id="prepQualityState">Revisando</b></div>
+            <div><span>Transformación</span><b id="prepEncodingState">Revisando</b></div>
+            <div><span>División</span><b id="prepSplitState">Lista</b></div>
+          </div>
+          <div id="integratedPreprocessStatus" class="analysis-summary preprocess-summary">Analizando variables seleccionadas…</div>
+          <div class="split-visual" aria-label="División train validation test"><div id="splitTrainBar" class="split-train"></div><div id="splitValBar" class="split-val"></div><div id="splitTestBar" class="split-test"></div></div>
+          <div class="split-legend"><span><i class="train"></i>Train <b id="trainCount">0</b></span><span><i class="val"></i>Validation <b id="valCount">0</b></span><span><i class="test"></i>Test <b id="testCount">0</b></span><span>Total <b id="totalCount">0</b></span></div>
+          <div class="prep-details-grid">
+            <details class="prep-disclosure"><summary>División Train / Validation / Test</summary><div class="controls-grid compact"><label>Train %<input id="trainPct" type="number" min="40" max="90" value="70"></label><label>Validation %<input id="valPct" type="number" min="0" max="40" value="15"></label><label>Test %<input id="testPct" type="number" min="0" max="40" value="15" readonly></label><label>Seed<input id="splitSeed" type="number" value="42"></label></div><button id="applySplitBtn" class="primary">Aplicar división</button></details>
+            <details class="prep-disclosure"><summary>Limpieza y normalización</summary><div class="option-grid"><label class="option-card"><input id="cleanMissing" type="checkbox" checked><b>Faltantes</b><span>Mediana/moda desde Train.</span></label><label class="option-card"><input id="cleanDuplicates" type="checkbox" checked><b>Duplicados</b><span>Filas exactamente repetidas.</span></label><label class="option-card"><input id="cleanOutliers" type="checkbox"><b>Outliers IQR</b><span>Solo X numéricas.</span></label><label class="option-card"><input id="normalizeData" type="checkbox" checked disabled><b>Normalización</b><span>Ajustada con Train.</span></label></div><button id="applyCleaningBtn" class="secondary">Aplicar limpieza</button><pre id="cleanLog" class="compact-log">Sin cambios todavía.</pre><div id="preprocessAudit" class="diagnosis-box">La variable Y se mantiene protegida.</div></details>
+          </div>
+          <div class="actions"><button id="integratedOneHotBtn" class="secondary">Preparar categóricas con One-Hot</button><button class="text-button" data-go="lab75">Abrir detalle técnico</button><button class="primary data-next-btn" data-go="networks">Continuar al modelo →</button></div>
+        </article>
+      </section>
+
+      <section id="tab-networks" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">2 · MODELO</span><h1>La red neuronal</h1><p>Configura la arquitectura y toca neuronas o conexiones para entender qué ocurre.</p></div><div class="actions"><button id="applyRecommendedNetBtn" class="secondary">Aplicar recomendación</button><button id="newNetworkBtn" class="primary">Nueva red</button></div></div>
+        <div id="networkTabs" class="network-tabs"></div>
+
+        <article class="dynamic-card size-xl input-link-card" data-card>
+          <div class="card-topline"><div><span class="kicker">X → NEURONAS DE ENTRADA</span><h2>Vinculación directa con tus columnas</h2><p>Cada X numérica equivale a una neurona de entrada. Una X categórica se expande a varias neuronas mediante One-Hot.</p></div><button class="info-icon" data-info="architecture"><svg><use href="#i-info"/></svg></button></div>
+          <div class="input-link-controls">
+            <label>Variable objetivo Y<select id="problemTargetSelect"></select></label>
+            <label class="switch-label"><input id="linkedArchitectureToggle" type="checkbox" checked><span>Arquitectura vinculada a X</span></label>
+            <label class="switch-label"><input id="showAllInputsToggle" type="checkbox"><span>Mostrar todas las entradas</span></label>
+            <button id="relinkArchitectureBtn" class="secondary">Recalcular capas</button>
+          </div>
+          <div class="summary-grid four input-link-summary"><div><span>Problema</span><b id="selectedProblemModel">Sin plantilla</b></div><div><span>X seleccionadas</span><b id="selectedXCount">0</b></div><div><span>Neuronas entrada</span><b id="inputNeuronCount">0</b></div><div><span>Neuronas salida</span><b id="outputNeuronCount">1</b></div></div>
+          <div id="inputNeuronMap" class="input-neuron-map"></div>
+          <p class="note">Mientras la vinculación esté activa, marcar o desmarcar una X recalcula las capas ocultas según la problemática elegida. Si modificas manualmente +/− en una capa, la vinculación se desactiva para respetar tu experimento.</p>
+        </article>
+
+        <section class="network-workspace">
+          <article class="dynamic-card size-md config-card" data-card>
+            <div class="card-topline"><div><span class="kicker">ARQUITECTURA</span><h2 id="currentNetworkName">Red 1</h2></div><button id="renameNetworkBtn" class="text-button">Renombrar</button></div>
+            <div class="preset-row">
+              <button data-preset="simple">Simple</button><button data-preset="medium">Intermedia</button><button data-preset="deep">Profunda</button><button data-preset="linear">Lineal</button>
+            </div>
+            <div id="layerEditor" class="layer-editor"></div>
+            <button id="addLayerBtn" class="secondary full"><svg><use href="#i-plus"/></svg>Agregar capa oculta</button>
+            <div class="controls-grid level-intermediate">
+              <label>Activación base<select id="hiddenActivation"><option value="sigmoid">Sigmoid</option><option value="tanh">Tanh</option><option value="relu">ReLU</option><option value="leaky">Leaky ReLU</option><option value="elu">ELU</option><option value="softplus">Softplus</option><option value="swish">Swish</option><option value="gelu">GELU</option><option value="linear">Lineal</option><option value="softsign">Softsign</option><option value="hard_sigmoid">Hard Sigmoid</option><option value="hard_tanh">Hard Tanh</option><option value="mish">Mish</option></select></label>
+              <label>Salida<select id="outputActivation"><option value="auto">Automática</option><option value="linear">Lineal</option><option value="sigmoid">Sigmoid</option><option value="softmax">Softmax</option></select></label>
+              <label>Inicialización<select id="initMethod"><option value="he">He</option><option value="xavier">Xavier</option><option value="random">Random</option></select></label>
+            </div>
+            <details class="advanced-disclosure level-advanced"><summary>Mostrar opciones avanzadas</summary><div class="advanced-note">Dropout, BatchNorm y bias se configuran por capa. BatchNorm usa estadísticas de mini-batch durante entrenamiento y medias/varianzas acumuladas en inferencia cuando se ejecuta con el motor JS offline.</div></details>
+          </article>
+
+          <article class="dynamic-card size-xl network-hero-card" data-card id="networkHeroCard">
+            <div class="card-topline"><div><span class="kicker">RED NEURONAL · ELEMENTO HERO</span><h2 id="architectureTitle">—</h2><p>El mismo SVG contiene nodos y cables: no hay capas DOM desalineadas.</p></div><div class="card-actions"><label class="switch-label"><input id="showWeightsToggle" type="checkbox" checked><span>Ver pesos</span></label><button class="icon-btn" data-card-max title="Maximizar"><svg><use href="#i-expand"/></svg></button><button class="info-icon" data-info="architecture"><svg><use href="#i-info"/></svg></button></div></div>
+            <div class="network-toolbar">
+              <label>Fila <input id="networkSampleRow" type="number" min="1" value="1"></label>
+              <label>Zoom <input id="networkZoomRange" type="range" min="80" max="160" value="100"></label>
+              <span id="networkDataHint">Toca una neurona o un cable.</span>
+            </div>
+            <div class="network-canvas" id="networkCanvas"><svg id="networkSvg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet"></svg><div id="networkLayers" hidden></div></div>
+            <div id="networkMotionStatus" class="network-motion-status">La señal avanza de X hacia ŷ y el gradiente vuelve desde la pérdida.</div>
+            <div class="summary-grid four"><div><span>Capas ocultas</span><b id="hiddenCount">0</b></div><div><span>Neuronas</span><b id="neuronCount">0</b></div><div><span>Parámetros</span><b id="paramCount">0</b></div><div><span>Activación</span><b id="activationName">—</b></div></div>
+            <div id="networkInspector" class="network-inspector" hidden></div>
+          </article>
+        </section>
+      </section>
+
+      <section id="tab-train" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">3 · ENTRENAMIENTO</span><h1>Ver cómo aprende</h1><p>Controla el aprendizaje sin perder de vista el flujo forward → loss → backprop → update.</p></div><div class="actions"><button id="trainBtn" class="primary">Entrenamiento completo</button><button id="stopBtn" disabled>Detener</button></div></div>
+
+        <section class="modular-grid">
+          <article class="dynamic-card size-md" data-card>
+            <div class="card-topline"><div><span class="kicker">CONFIGURACIÓN BÁSICA</span><h2>Aprendizaje</h2></div><button class="info-icon" data-info="training"><svg><use href="#i-info"/></svg></button></div>
+            <div class="controls-grid compact">
+              <label>Épocas<input id="epochs" type="number" min="1" max="2000" value="150"></label>
+              <label>Learning rate<input id="learningRate" type="number" min="0.00001" max="1" step="0.001" value="0.03"></label>
+              <label>Batch<select id="batchSize"><option>1</option><option>8</option><option selected>16</option><option>32</option><option>64</option></select></label>
+              <label>Seed<input id="trainingSeed" type="number" value="42"></label>
+            </div>
+            <details class="advanced-disclosure level-intermediate"><summary>Mostrar opciones avanzadas</summary><div class="controls-grid compact">
+              <label>Optimizador<select id="optimizer"><option value="sgd">SGD</option><option value="momentum">Momentum</option><option value="nesterov">Nesterov</option><option value="adagrad">AdaGrad</option><option value="rmsprop">RMSProp</option><option value="adam" selected>Adam</option><option value="adamw">AdamW</option><option value="adamax">AdaMax</option></select></label>
+              <label>Loss<select id="lossFunction"><option value="auto">Automática</option><option value="mse">MSE</option><option value="mae">MAE</option><option value="huber">Huber</option><option value="bce">Binary Cross-Entropy</option></select></label>
+              <label>Motor<select id="engine"><option value="js">Navegador (JS)</option><option value="python">Python opcional</option></select></label>
+              <label class="toggle-field"><input id="slowMo" type="checkbox"><span>Animación detallada</span></label>
+            </div></details>
+            <div class="summary-grid three"><div><span>Problema</span><b id="detectedProblem">—</b></div><div><span>Loss</span><b id="activeLoss">—</b></div><div><span>Recomendación</span><b id="lossRecommendation">—</b></div></div>
+          </article>
+
+          <article class="dynamic-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">MODO ESTUDIANTE</span><h2>Reproducción del aprendizaje</h2></div><button class="info-icon" data-info="backprop"><svg><use href="#i-info"/></svg></button></div>
+            <div class="training-mirror"><svg id="trainingSvg" viewBox="0 0 1000 430" preserveAspectRatio="xMidYMid meet"></svg></div>
+            <div class="playback-controls"><button id="stepBtn">1 paso</button><button id="animOneRowBtn">1 fila</button><button id="animEpochBtn">1 época</button><button id="playBtn">Reproducir</button><button id="animPauseBtn">Pausa</button><div class="speed-group"><button data-speed="0.25">0.25x</button><button data-speed="0.5">0.5x</button><button data-speed="1" class="active">1x</button><button data-speed="2">2x</button></div></div>
+            <div class="phase-card"><span id="phaseLabel">LISTO</span><strong id="phaseTitle">Selecciona un paso</strong><div id="phaseMath" class="math-display">a = f(Wx + b)</div></div><div id="realStepReadout" class="gradient-readout"><strong>Vista previa de actualización real</strong><span>El botón “1 paso” calculará un forward, gradiente y cambio de peso sobre la fila seleccionada sin alterar silenciosamente tu modelo.</span></div>
+          </article>
+        </section>
+
+        <article class="dynamic-card size-xl loss-studio" data-card id="lossStudioCard">
+          <div class="card-topline"><div><span class="kicker">FUNCIÓN DE ERROR / LOSS</span><h2>Qué castiga realmente el modelo</h2><p>Compara la penalización y selecciona una loss compatible con el problema.</p></div><button class="info-icon" data-info="lossfunctions"><svg><use href="#i-info"/></svg></button></div>
+          <div id="lossFunctionCards" class="loss-card-grid"></div>
+          <div class="loss-compare-layout"><div class="loss-chart-interactive"><div class="loss-live-toolbar"><label>Error e = y − ŷ <input id="lossErrorSlider" type="range" min="-3" max="3" step="0.05" value="1"></label><div class="loss-live-values"><span>Error <b id="lossErrorValue">1.00</b></span><span>Penalización <b id="lossPenaltyValue">—</b></span></div></div><div class="chart-box loss-chart-box"><canvas id="lossComparisonChart" width="1000" height="420"></canvas></div><p class="note">Mueve el control o toca el gráfico. La curva seleccionada se destaca y el punto muestra cuánto penaliza ese error.</p></div><div id="lossLiveExplanation" class="explain-panel">Selecciona una función para ver fórmula, sensibilidad y uso industrial.</div></div>
+        </article>
+
+        <article class="dynamic-card size-xl" data-card>
+          <div class="card-topline"><div><span class="kicker">PROGRESO</span><h2>Entrenamiento en curso</h2></div><div class="actions"><button id="saveModelBtn">Guardar modelo</button><button id="loadModelBtn">Cargar modelo</button><input id="modelInput" type="file" accept=".json" hidden></div></div>
+          <div class="summary-grid four"><div><span>Train loss</span><b id="trainLoss">—</b></div><div><span>Val loss</span><b id="valLoss">—</b></div><div><span>Test</span><b id="testMetric">—</b></div><div><span>Época</span><b id="epochValue">0</b></div></div>
+          <div class="progress"><i id="progressBar"></i></div>
+          <pre id="trainLog" class="compact-log">Aún no se ha entrenado.</pre>
+          <canvas id="neuronCanvas" width="1000" height="420" class="compat-canvas" aria-hidden="true"></canvas>
+        </article>
+      </section>
+
+      <section id="tab-results" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">4 · RESULTADOS</span><h1>Números que se pueden interpretar</h1><p>Cada métrica explica qué significa en las unidades de tu variable objetivo.</p></div><button id="explainResultsBtn" class="secondary">¿Qué significa?</button></div>
+        <div id="evaluationMetrics" class="metric-card-grid"></div>
+        <article class="dynamic-card size-xl experiment-studio" data-card>
+          <div class="card-topline"><div><span class="kicker">EXPERIMENT TRACKING</span><h2>Historial de modelos</h2><p>Compara arquitectura, optimizador, épocas y error de evaluación sin perder configuraciones anteriores.</p></div><button id="refreshExperimentsBtn">Actualizar</button></div>
+          <div id="experimentHistory" class="experiment-history"></div>
+        </article>
+        <section class="modular-grid">
+          <article class="flip-card dynamic-card size-lg" data-card data-flip>
+            <div class="flip-inner"><div class="flip-face flip-front"><div class="card-topline"><div><span class="kicker">TRAIN VS VALIDATION</span><h2>Curva de entrenamiento</h2></div><div class="card-actions"><button class="icon-btn" data-card-max><svg><use href="#i-expand"/></svg></button><button class="info-icon" data-info="learningcurve"><svg><use href="#i-info"/></svg></button></div></div><div class="chart-box"><canvas id="lossChart" width="1000" height="360"></canvas></div><span class="flip-hint">Toca la card para interpretar</span></div><div class="flip-face flip-back"><div class="card-topline"><div><span class="kicker">¿QUÉ SIGNIFICA?</span><h2>Lectura de la curva</h2></div></div><div id="lossCardBack" class="explain-panel">Entrena una red para obtener una lectura contextual.</div></div></div>
+          </article>
+          <article class="flip-card dynamic-card size-lg" data-card data-flip>
+            <div class="flip-inner"><div class="flip-face flip-front"><div class="card-topline"><div><span class="kicker">PREDICHO VS REAL</span><h2>Calidad de predicción</h2></div><button class="icon-btn" data-card-max><svg><use href="#i-expand"/></svg></button></div><div class="chart-box"><canvas id="predChart" width="760" height="460"></canvas></div><span class="flip-hint">Toca la card para interpretar</span></div><div class="flip-face flip-back"><div class="card-topline"><div><span class="kicker">INTERPRETACIÓN</span><h2>Predicho vs real</h2></div></div><div id="parityCardBack" class="explain-panel">Aquí aparecerán MAE, RMSE, R² y sesgo.</div></div></div>
+          </article>
+        </section>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">LECTURA INDUSTRIAL</span><h2>¿Qué dicen los resultados?</h2></div><button class="info-icon" data-info="lossfunctions"><svg><use href="#i-info"/></svg></button></div><div id="resultMeaningBox" class="diagnosis-box">Entrena una red y aquí aparecerá una interpretación clara.</div></article>
+        <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">PROBAR ESCENARIOS</span><h2>Nueva predicción</h2></div></div><div id="predictorBox"></div></article>
+        <div class="metric-toggle-row" aria-label="Métricas a mostrar"><label><input id="metricMAE" type="checkbox" checked> MAE</label><label><input id="metricRMSE" type="checkbox" checked> RMSE</label><label><input id="metricR2" type="checkbox" checked> R²</label><label><input id="metricAccuracy" type="checkbox" checked> Accuracy</label><label><input id="metricPrecision" type="checkbox" checked> Precision</label><label><input id="metricRecall" type="checkbox" checked> Recall</label><label><input id="metricF1" type="checkbox" checked> F1</label><label><input id="metricSpecificity" type="checkbox" checked> Specificity</label><label><input id="metricBalancedAccuracy" type="checkbox" checked> Balanced Accuracy</label></div>
+      </section>
+
+      <section id="tab-analysis" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">5 · ANÁLISIS</span><h1>Diagnosticar antes de decidir</h1><p>Estadística, residuos, importancia y generalización se conectan con el mismo modelo.</p></div></div>
+        <div class="context-grid analysis-launchers">
+          <button class="context-card" data-go="stats"><svg><use href="#i-analysis"/></svg><strong>Estadística aplicada</strong><span>Distribución, correlación y tests guiados</span></button>
+          <button class="context-card" data-go="generalization"><svg><use href="#i-network"/></svg><strong>Generalización</strong><span>Overfitting, underfitting y mitigación</span></button>
+          <button class="context-card" data-go="lab75"><svg><use href="#i-result"/></svg><strong>Residuos y ROC/PR</strong><span>Lab 7.5 integrado</span></button>
+        </div>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">ANÁLISIS DEL MODELO</span><h2>Residuos e importancia</h2></div><button id="analyzeModelBtn" class="primary">Analizar modelo</button></div><div id="analysisSummary" class="analysis-summary">Entrena la red y luego ejecuta el análisis para conectar errores con variables.</div></article>
+      </section>
+
+      <section id="tab-decision" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">6 · DECISIÓN</span><h1>De la predicción a una pregunta industrial</h1><p>El laboratorio no prescribe una acción. Organiza evidencia y preguntas para apoyar tu criterio.</p></div></div>
+        <div class="decision-chain"><div>Datos</div><b>→</b><div>Red neuronal</div><b>→</b><div>Predicción</div><b>→</b><div>Optimización / evaluación económica</div><b>→</b><div>Decisión</div></div>
+
+        <section class="decision-center" id="decisionCenter">
+          <div class="decision-center-head">
+            <div><span class="eyebrow">DECISION CENTER</span><h2>Simula antes de decidir</h2><p>Modifica variables de entrada y observa cómo responde el modelo. Los impactos mostrados son sensibilidades locales aproximadas, no causalidad.</p></div>
+            <div class="dc-head-actions"><button id="dcResetBtn">Restablecer escenario</button><button id="openReportBtn" class="primary">Generar informe</button></div>
+          </div>
+          <div id="dcNoModel" class="dc-empty">Entrena una red para activar el simulador de escenarios.</div>
+          <div id="dcWorkspace" class="dc-workspace" hidden>
+            <div class="dc-kpi-strip">
+              <div><span>Predicción base</span><strong id="dcBaselinePrediction">—</strong></div>
+              <div class="dc-primary-kpi"><span>Escenario actual</span><strong id="dcCurrentPrediction">—</strong></div>
+              <div><span>Cambio</span><strong id="dcPredictionDelta">—</strong></div>
+              <div><span>Modelo</span><strong id="dcModelName">—</strong></div>
+            </div>
+            <div class="dc-grid">
+              <article class="dc-panel">
+                <div class="dc-panel-title"><div><span class="kicker">ESCENARIO</span><h3>Mueve las variables X</h3></div><button id="dcUseRowBtn">Usar fila del dataset</button></div>
+                <label class="dc-row-selector">Fila de referencia <input id="dcRowNumber" type="number" min="1" value="1"></label>
+                <div id="dcScenarioControls" class="dc-scenario-controls"></div>
+              </article>
+              <article class="dc-panel">
+                <div class="dc-panel-title"><div><span class="kicker">EXPLICABILIDAD</span><h3>Impacto local aproximado</h3></div></div>
+                <p class="note">Cada barra compara la predicción actual con la predicción obtenida al reemplazar una variable por su media de entrenamiento.</p>
+                <div id="dcLocalImpact" class="dc-local-impact"></div>
+              </article>
+            </div>
+            <article class="dc-economics">
+              <div><span class="kicker">CAPA ECONÓMICA</span><h3>Traduce el cambio a una magnitud monetaria</h3><p>Define un valor o costo por unidad de salida. Es una aproximación para explorar escenarios, no una valorización automática.</p></div>
+              <label>Valor/costo por unidad <input id="dcEconomicUnit" type="number" step="any" value="0"></label>
+              <div><span>Impacto económico aproximado</span><strong id="dcEconomicImpact">—</strong></div>
+            </article>
+            <div id="dcInterpretation" class="dc-interpretation"></div>
+          </div>
+        </section>
+        <section class="modular-grid">
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">LECTURA</span><h2>Variables que conviene investigar</h2></div><button class="info-icon" data-info="residuals"><svg><use href="#i-info"/></svg></button></div><div id="decisionImportance" class="decision-list">Entrena y analiza el modelo para generar preguntas.</div></article>
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">PREGUNTAS</span><h2>¿Qué decisión puede apoyar?</h2></div></div><div id="decisionQuestions" class="decision-list"></div></article>
+        </section>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">CONEXIÓN ICI</span><h2>Cómo se integra con Ingeniería Civil Industrial</h2></div></div><div id="iciConnection" class="ici-grid"></div></article>
+        <article class="dynamic-card size-xl report-builder" data-card>
+          <div class="card-topline"><div><span class="kicker">REPORT BUILDER</span><h2>Convierte el análisis en un entregable</h2><p>Genera un resumen ejecutivo con dataset, modelo, métricas, escenario y lectura industrial.</p></div></div>
+          <div class="report-options">
+            <label><input id="reportIncludeData" type="checkbox" checked> Dataset y calidad</label>
+            <label><input id="reportIncludeModel" type="checkbox" checked> Arquitectura</label>
+            <label><input id="reportIncludeMetrics" type="checkbox" checked> Métricas</label>
+            <label><input id="reportIncludeCharts" type="checkbox" checked> Gráficos</label>
+            <label><input id="reportIncludeDecision" type="checkbox" checked> Escenario y decisión</label>
+          </div>
+          <div class="actions"><button id="previewReportBtn">Vista previa</button><button id="downloadReportBtn">Descargar HTML</button><button id="printReportBtn" class="primary">Imprimir / Guardar PDF</button></div>
+        </article>
+      </section>
+
+      <section id="tab-generalization" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">GENERALIZACIÓN</span><h1>Diagnóstico del modelo</h1></div></div>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">ESTADO</span><h2>¿Está aprendiendo o memorizando?</h2></div><button class="info-icon" data-info="generalization"><svg><use href="#i-info"/></svg></button></div><div id="generalizationDiagnosis" class="diagnosis-box">Entrena una red para obtener diagnóstico.</div></article>
+        <section class="modular-grid">
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">MITIGACIÓN</span><h2>Opciones disponibles</h2></div><button class="info-icon" data-info="regularization"><svg><use href="#i-info"/></svg></button></div><div class="option-grid">
+            <label class="option-card level-advanced"><input id="useL1" type="checkbox"><b>L1</b><span>Favorece pesos cercanos a cero.</span><input id="l1Lambda" type="number" step="0.0001" value="0.001"></label>
+            <label class="option-card level-advanced"><input id="useL2" type="checkbox"><b>L2</b><span>Penaliza pesos grandes.</span><input id="l2Lambda" type="number" step="0.0001" value="0.001"></label>
+            <label class="option-card level-intermediate"><input id="useDropout" type="checkbox"><b>Dropout</b><span>Reduce co-adaptación.</span><input id="dropoutRate" type="number" min="0" max="0.9" step="0.05" value="0.20"></label>
+            <label class="option-card level-intermediate"><input id="useEarlyStopping" type="checkbox" checked><b>Early stopping</b><span>Detiene si validation deja de mejorar.</span><input id="patience" type="number" min="1" max="100" value="15"></label>
+            <label class="option-card level-advanced"><input id="useGradClip" type="checkbox"><b>Gradient clipping</b><span>Limita gradientes extremos.</span><input id="gradClipValue" type="number" min="0.01" step="0.1" value="1.0"></label>
+            <label class="option-card level-advanced"><input id="useLrDecay" type="checkbox"><b>LR decay</b><span>Reduce η con las épocas.</span><input id="lrDecay" type="number" min="0" step="0.0001" value="0.001"></label>
+            <label class="option-card level-advanced"><input id="useWeightDecay" type="checkbox"><b>Weight decay</b><span>Reduce pesos de forma desacoplada.</span><input id="weightDecay" type="number" min="0" step="0.0001" value="0.001"></label>
+            <label class="option-card level-advanced"><input id="useNoise" type="checkbox"><b>Ruido en entradas</b><span>Regularización por perturbación.</span><input id="inputNoise" type="number" min="0" max="1" step="0.01" value="0.02"></label>
+          </div><button id="applyGeneralizationSuggestionBtn" class="secondary">Aplicar configuración sugerida</button></article>
+          <article class="flip-card dynamic-card size-lg" data-card data-flip><div class="flip-inner"><div class="flip-face flip-front"><div class="card-topline"><div><span class="kicker">TRAINING CURVE</span><h2>Error vs épocas</h2></div><button class="info-icon" data-info="learningcurve"><svg><use href="#i-info"/></svg></button></div><div class="chart-box"><canvas id="learningCurveChart" width="1000" height="360"></canvas></div></div><div class="flip-face flip-back"><div class="card-topline"><div><span class="kicker">INTERPRETACIÓN</span><h2>Diagnóstico</h2></div></div><div id="learningCurveInterpretation" class="diagnosis-box">Sin entrenamiento.</div></div></div></article>
+        </section>
+      </section>
+
+      <section id="tab-stats" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">ESTADÍSTICA APLICADA</span><h1>Entender los datos antes del modelo</h1><p>El sistema recomienda el análisis según los tipos de variables seleccionadas.</p></div><button class="info-icon" data-info="stats"><svg><use href="#i-info"/></svg></button></div>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">ASISTENTE</span><h2>¿Qué análisis estadístico corresponde?</h2></div></div><div class="controls-grid compact"><label>Variable A<select id="statsSelect"></select></label><label>Variable B<select id="statsSecondSelect"><option value="">Ninguna</option></select></label><label>Tipo de análisis<select id="statsAnalysisType"><option value="auto">Recomendar automáticamente</option><option value="univariate">Una variable</option><option value="numeric2">Dos numéricas</option><option value="catnum">Categórica vs numérica</option><option value="catcat">Categórica vs categórica</option></select></label></div><div id="statsRecommendation" class="diagnosis-box">Selecciona variables para recibir una recomendación.</div></article>
+        <div id="statsCards" class="stats-grid"></div>
+        <section class="modular-grid stats-charts">
+          <article class="flip-card dynamic-card size-md" data-card data-flip><div class="flip-inner"><div class="flip-face flip-front"><div class="card-topline"><h2>Histograma</h2><button class="icon-btn" data-card-max><svg><use href="#i-expand"/></svg></button></div><div class="chart-box"><canvas id="histCanvas" width="760" height="380"></canvas></div></div><div class="flip-face flip-back"><div id="histBack" class="explain-panel"></div></div></div></article>
+          <article class="flip-card dynamic-card size-md" data-card data-flip><div class="flip-inner"><div class="flip-face flip-front"><div class="card-topline"><h2>Boxplot</h2><button class="icon-btn" data-card-max><svg><use href="#i-expand"/></svg></button></div><div class="chart-box"><canvas id="boxCanvas" width="760" height="320"></canvas></div></div><div class="flip-face flip-back"><div id="boxBack" class="explain-panel"></div></div></div></article>
+          <article class="dynamic-card size-md" data-card><div class="card-topline"><h2>Densidad aproximada</h2></div><div class="chart-box"><canvas id="densityCanvas" width="760" height="360"></canvas></div></article>
+          <article class="dynamic-card size-md" data-card><div class="card-topline"><h2>ECDF</h2></div><div class="chart-box"><canvas id="ecdfCanvas" width="760" height="360"></canvas></div></article>
+          <article class="dynamic-card size-md" data-card><div class="card-topline"><h2>QQ plot</h2></div><div class="chart-box"><canvas id="qqCanvas" width="760" height="360"></canvas></div></article>
+        </section>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">DOS VARIABLES NUMÉRICAS</span><h2>Asociación</h2></div><button class="info-icon" data-info="correlation"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>X<select id="corrX"></select></label><label>Y<select id="corrY"></select></label></div><div class="summary-grid four"><div><span>Pearson</span><b id="corrValue">—</b></div><div><span>Spearman</span><b id="spearmanValue">—</b></div><div><span>Covarianza</span><b id="covValue">—</b></div><div><span>R² lineal</span><b id="corrR2">—</b></div></div><p id="corrText" class="note"></p><div class="chart-box"><canvas id="scatterCanvas" width="900" height="440"></canvas></div></article>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">VARIABLES CATEGÓRICAS</span><h2>Análisis por tipo</h2></div></div><div id="categoricalStatsPanel" class="analysis-summary">Selecciona variables categóricas desde el asistente.</div><div class="chart-box"><canvas id="groupBoxplotCanvas" width="1000" height="400"></canvas></div></article>
+        <article class="dynamic-card size-xl level-intermediate" data-card><div class="card-topline"><div><span class="kicker">INFERENCIA GUIADA</span><h2>ANOVA, Welch o Chi-cuadrado cuando corresponde</h2><p>El test se elige según los tipos de variables y muestra los supuestos antes de interpretar el p-value.</p></div><button class="info-icon" data-info="stats"><svg><use href="#i-info"/></svg></button></div><button id="runStatTestBtn" class="secondary">Ejecutar análisis inferencial</button><div id="statTestResult" class="analysis-summary">Selecciona Variable A y Variable B en el asistente.</div></article>
+      </section>
+
+      <section id="tab-advanced" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">HERRAMIENTAS AVANZADAS</span><h1>Data augmentation y GAN educativa</h1></div></div>
+        <section class="modular-grid">
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">DATA AUGMENTATION</span><h2>Generar filas sintéticas</h2></div><button class="info-icon" data-info="augmentation"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Cantidad<input id="augmentCount" type="number" value="100"></label><label>Ruido %<input id="augmentNoise" type="number" value="5"></label></div><button id="augmentBtn" class="secondary">Generar solo para Train</button><pre id="augmentLog" class="compact-log">Sin datos sintéticos.</pre></article>
+          <article class="dynamic-card size-lg level-advanced" data-card><div class="card-topline"><div><span class="kicker">GAN 1D</span><h2>Data augmentation generativo</h2></div><button class="info-icon" data-info="gan"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Variable<select id="ganVariable"></select></label><label>Iteraciones<input id="ganIterations" type="number" value="500"></label></div><button id="ganTrainBtn" class="secondary">Entrenar GAN educativa</button><div class="chart-box"><canvas id="ganChart" width="900" height="380"></canvas></div><pre id="ganLog" class="compact-log">Sin entrenamiento.</pre></article>
+        </section>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">COMPARACIÓN DE REDES</span><h2>Complejidad, error y estabilidad</h2><p>No se declara una red ganadora: se muestran compromisos entre error, tamaño y generalización.</p></div><button class="info-icon" data-info="architecture"><svg><use href="#i-info"/></svg></button></div><div class="comparison-chart-grid"><div><span class="chart-label">Error de evaluación</span><div class="chart-box"><canvas id="networkErrorComparisonChart" width="900" height="340"></canvas></div></div><div><span class="chart-label">Complejidad / parámetros</span><div class="chart-box"><canvas id="networkComplexityChart" width="900" height="340"></canvas></div></div></div><div id="comparisonTable" class="table-wrap"></div></article>
+      </section>
+
+      <section id="tab-concepts" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">RUTA DEL CURSO · UCN</span><h1>Fundamentos conectados al laboratorio</h1><p>La teoría se explica sobre la misma red que estás configurando: activación, error, gradiente, regularización, optimización, clasificación y visión artificial.</p></div></div>
+        <article class="dynamic-card size-xl course-route-card" data-card>
+          <div class="card-topline"><div><span class="kicker">TÓPICOS DE MACHINE LEARNING PARA LA EMPRESA</span><h2>Ruta de estudio UCN</h2><p>Relaciona los conceptos del curso con el experimento actual sin separarlos de la práctica.</p></div></div>
+          <div class="course-route"><button data-course-scroll="activationStudio">Funciones de activación</button><span>→</span><button data-go="train">Loss y backprop</button><span>→</span><button data-go="generalization">Regularización</button><span>→</span><button data-course-scroll="optimizerComparisonChart">Optimización</button><span>→</span><button data-go="results">Clasificación</button><span>→</span><button data-go="cnn">CNN</button></div>
+        </article>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">INFLUENCIA</span><h2>Cómo una capa afecta a la siguiente</h2></div><button class="info-icon" data-info="influence"><svg><use href="#i-info"/></svg></button></div><div id="influenceFlow" class="influence-flow"></div><div class="playback-controls"><button id="influencePrevBtn">Anterior</button><button id="influenceNextBtn">Siguiente</button></div><div class="phase-card"><span id="influencePhase">FORWARD</span><strong id="influenceTitle">Entrada X</strong><pre id="influenceMath" class="math-display"></pre></div></article>
+        <section class="modular-grid">
+          <article class="dynamic-card size-xl activation-studio" data-card id="activationStudio">
+            <div class="card-topline"><div><span class="kicker">FUNCIONES DE ACTIVACIÓN</span><h2>Qué transformación aplica cada neurona</h2><p>Selecciona una función para ver su fórmula, curva, derivada, rango y uso típico. Puedes aplicarla directamente a la red actual.</p></div><button class="info-icon" data-info="activation"><svg><use href="#i-info"/></svg></button></div>
+            <div class="activation-layout">
+              <div class="activation-selector-panel">
+                <label>Función<select id="activationExplorerSelect"><option value="sigmoid">Sigmoid</option><option value="tanh">Tanh</option><option value="relu">ReLU</option><option value="leaky">Leaky ReLU</option><option value="elu">ELU</option><option value="softplus">Softplus</option><option value="swish">Swish</option><option value="gelu">GELU</option><option value="linear">Lineal</option><option value="softsign">Softsign</option><option value="hard_sigmoid">Hard Sigmoid</option><option value="hard_tanh">Hard Tanh</option><option value="mish">Mish</option></select></label>
+                <div id="activationFormulaRich" class="activation-formula"></div>
+                <div class="activation-facts"><div><span>Rango</span><b id="activationRange">—</b></div><div><span>Gradiente</span><b id="activationGradient">—</b></div><div><span>Uso típico</span><b id="activationUseShort">—</b></div></div>
+                <div class="actions"><button id="applyActivationToAllBtn" class="primary">Aplicar a capas ocultas</button><button id="activationInfoBtn" class="secondary">¿Qué significa?</button></div>
+              </div>
+              <div class="chart-box activation-chart-box"><canvas id="activationCanvas" width="1000" height="440"></canvas><div class="activation-legend"><span><i class="curve-main"></i> f(x)</span><span><i class="curve-derivative"></i> f′(x)</span></div></div>
+            </div>
+            <div class="activation-explanation-grid"><div><span class="kicker">DESCRIPCIÓN</span><p id="activationDescription"></p></div><div><span class="kicker">PRINCIPALES USOS</span><p id="activationUses"></p></div><div><span class="kicker">VENTAJA</span><p id="activationAdvantage"></p></div><div><span class="kicker">RIESGO / ERROR COMÚN</span><p id="activationRisk"></p></div><div class="wide"><span class="kicker">EJEMPLO INDUSTRIAL</span><p id="activationIndustrial"></p></div></div>
+          </article>
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">RNN / LSTM / GRU</span><h2>Memoria temporal</h2></div><button class="info-icon" data-info="memory"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Celda<select id="memoryType"><option value="rnn">RNN</option><option value="lstm">LSTM</option><option value="gru">GRU</option></select></label><label>Secuencia<input id="memorySequence" value="0.2,0.5,0.8,0.4,0.9"></label></div><button id="runMemoryBtn" class="secondary">Recorrer secuencia</button><div id="memoryTheory" class="math-note"></div><div id="memorySteps" class="memory-steps"></div></article>
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">OPTIMIZADORES</span><h2>Cómo se mueve un peso</h2></div><button class="info-icon" data-info="optimizers"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Optimizador<select id="optimizerDemoSelect"><option value="sgd">SGD</option><option value="momentum">Momentum</option><option value="nesterov">Nesterov</option><option value="adagrad">AdaGrad</option><option value="rmsprop">RMSProp</option><option value="adam">Adam</option><option value="adamw">AdamW</option><option value="adamax">AdaMax</option></select></label></div><div class="summary-grid four"><div><span>Peso</span><b id="optWeight">1.0000</b></div><div><span>Gradiente</span><b id="optGradient">0.3000</b></div><div><span>LR</span><b id="optLR">0.1000</b></div><div><span>Nuevo</span><b id="optNewWeight">—</b></div></div><button id="optimizerStepBtn" class="secondary">Aplicar un paso</button><pre id="optimizerFormula" class="math-display"></pre></article>
+        </section>
+        <article class="dynamic-card size-xl" data-card><div class="card-topline"><div><span class="kicker">COMPARADOR</span><h2>Mismo gradiente, actualizaciones distintas</h2></div><button class="info-icon" data-info="optimizercompare"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Peso inicial<input id="compareWeight" type="number" value="1" step="0.1"></label><label>Gradiente<input id="compareGradient" type="number" value="0.3" step="0.1"></label><label>LR<input id="compareLR" type="number" value="0.1" step="0.01"></label><label>Pasos<input id="compareSteps" type="number" value="30"></label></div><div id="optimizerVisibility" class="metric-toggle-row"></div><button id="runOptimizerComparisonBtn" class="secondary">Comparar</button><div class="chart-box optimizer-chart-wrap"><canvas id="optimizerComparisonChart" width="1000" height="420"></canvas><div id="optimizerChartTooltip" class="chart-tooltip" hidden></div></div><div id="optimizerStepReadout" class="diagnosis-box">Pasa el cursor o toca el gráfico para comparar el peso en un paso específico.</div><div id="optimizerComparisonTable" class="table-wrap"></div></article>
+      </section>
+
+      <section id="tab-cnn" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">VISIÓN ARTIFICIAL · CNN</span><h1>Convolución que puedes ver y tocar</h1><p>Laboratorio offline basado en la secuencia del curso: imagen → Conv2D → activación → pooling → extracción de características → clasificador.</p></div></div>
+        <section class="modular-grid">
+          <article class="dynamic-card size-xl cnn-pipeline-card" data-card>
+            <div class="card-topline"><div><span class="kicker">ARQUITECTURA DE REFERENCIA DEL CURSO</span><h2>CNN para clasificación de imágenes</h2><p>El ejemplo docente usa dos bloques Conv2D + MaxPooling antes de Flatten, Dense y Softmax.</p></div><button class="info-icon" data-info="cnn"><svg><use href="#i-info"/></svg></button></div>
+            <div class="cnn-pipeline"><div><b>28×28×1</b><span>Entrada</span></div><i>→</i><div><b>Conv 32</b><span>3×3 + ReLU</span></div><i>→</i><div><b>Pool</b><span>2×2</span></div><i>→</i><div><b>Conv 64</b><span>3×3 + ReLU</span></div><i>→</i><div><b>Pool</b><span>2×2</span></div><i>→</i><div><b>Dense 64</b><span>Clasificador</span></div><i>→</i><div class="cnn-output"><b>Softmax</b><span>Clases</span></div></div>
+            <p class="note">El navegador calcula convolución y max pooling de forma real para estudiar el mecanismo. El entrenamiento CNN completo del material docente usa TensorFlow/Keras; este módulo no inventa un entrenamiento CNN dentro del motor MLP.</p>
+          </article>
+          <article class="dynamic-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">1 · ENTRADA</span><h2>Imagen industrial</h2><p>Sube una imagen o usa un patrón de demostración. Todo se procesa localmente.</p></div></div>
+            <div class="actions"><button id="cnnLoadImageBtn" class="primary"><svg><use href="#i-upload"/></svg>Subir imagen</button><button id="cnnDemoImageBtn" class="secondary">Patrón demo</button><input id="cnnImageInput" type="file" accept="image/*" hidden></div>
+            <div class="cnn-canvas-frame"><canvas id="cnnInputCanvas" width="280" height="280"></canvas></div>
+            <div class="summary-grid three"><div><span>Entrada</span><b id="cnnInputShape">28×28×1</b></div><div><span>Mínimo</span><b id="cnnInputMin">—</b></div><div><span>Máximo</span><b id="cnnInputMax">—</b></div></div>
+          </article>
+          <article class="dynamic-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">2 · KERNEL</span><h2>Filtro 3×3</h2><p>El kernel se desliza, multiplica elemento a elemento y suma.</p></div></div>
+            <div class="controls-grid compact"><label>Filtro<select id="cnnKernelSelect"><option value="edge">Bordes verticales</option><option value="sobel">Sobel horizontal</option><option value="sharpen">Enfoque</option><option value="blur">Suavizado</option><option value="laplace">Laplaciano</option></select></label><label>Padding<select id="cnnPadding"><option value="same">same</option><option value="valid">valid</option></select></label><label>Stride<select id="cnnStride"><option value="1">1</option><option value="2">2</option></select></label></div>
+            <div class="cnn-kernel-grid" id="cnnKernelGrid"></div>
+            <div class="formula-rich cnn-formula"><span>(I ∗ K)(x,y) = </span><span class="sum">Σ</span><sub>i</sub><span class="sum">Σ</span><sub>j</sub><span>I(x+i,y+j)·K(i,j)</span></div>
+            <button id="cnnRunBtn" class="primary full">Ejecutar convolución</button>
+          </article>
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">3 · FEATURE MAP</span><h2>Mapa de activación</h2></div></div><div class="cnn-canvas-frame"><canvas id="cnnFeatureCanvas" width="420" height="420"></canvas></div><div class="summary-grid three"><div><span>Shape</span><b id="cnnFeatureShape">—</b></div><div><span>Activación</span><b>ReLU</b></div><div><span>Operaciones</span><b id="cnnOps">—</b></div></div></article>
+          <article class="dynamic-card size-lg" data-card><div class="card-topline"><div><span class="kicker">4 · MAX POOLING</span><h2>Reducir sin perder la señal dominante</h2></div></div><div class="cnn-canvas-frame"><canvas id="cnnPoolCanvas" width="420" height="420"></canvas></div><div class="summary-grid three"><div><span>Ventana</span><b>2×2</b></div><div><span>Stride</span><b>2</b></div><div><span>Shape</span><b id="cnnPoolShape">—</b></div></div><div id="cnnInterpretation" class="diagnosis-box">Ejecuta la convolución para interpretar qué regiones activó el filtro.</div></article>
+        </section>
+      </section>
+
+      <section id="tab-lab75" class="tab-page">
+        <div class="page-intro"><div><span class="eyebrow">LAB 7.5</span><h1>Laboratorios especializados</h1><p>Cada módulo conserva su función, pero ahora está organizado como parte del mismo producto.</p></div></div>
+        <section class="lab-grid">
+          <article class="dynamic-card lab-card" data-card><div class="card-topline"><div><span class="kicker">1 · CATEGÓRICAS</span><h2>One-Hot Encoding</h2></div><button class="info-icon" data-info="onehot"><svg><use href="#i-info"/></svg></button></div><div id="categoricalAudit" class="summary-grid three"></div><button id="applyOneHotBtn" class="secondary">Aplicar One-Hot</button><div id="oneHotPreview" class="note"></div></article>
+          <article class="dynamic-card lab-card" data-card><div class="card-topline"><div><span class="kicker">2 · MULTICLASE</span><h2>Softmax + Cross-Entropy</h2></div><button class="info-icon" data-info="multiclass"><svg><use href="#i-info"/></svg></button></div><div id="mcTargetAudit" class="diagnosis-box"></div><div class="controls-grid compact"><label>Neuronas<input id="mcHidden" type="number" value="10"></label><label>Épocas<input id="mcEpochs" type="number" value="250"></label><label>LR<input id="mcLR" type="number" value="0.03" step="0.01"></label><label>Activación<select id="mcActivation"><option value="sigmoid">Sigmoid</option><option value="tanh">Tanh</option><option value="relu">ReLU</option><option value="leaky">Leaky ReLU</option><option value="elu">ELU</option><option value="softplus">Softplus</option><option value="swish">Swish</option><option value="gelu">GELU</option><option value="linear">Lineal</option><option value="softsign">Softsign</option><option value="hard_sigmoid">Hard Sigmoid</option><option value="hard_tanh">Hard Tanh</option><option value="mish">Mish</option></select></label></div><button id="trainMulticlassBtn" class="secondary">Entrenar</button><div class="summary-grid four"><div><span>Clases</span><b id="mcClasses">—</b></div><div><span>Train CE</span><b id="mcTrainLoss">—</b></div><div><span>Val CE</span><b id="mcValLoss">—</b></div><div><span>Accuracy</span><b id="mcAccuracy">—</b></div></div><div class="chart-box"><canvas id="mcLossChart" width="900" height="340"></canvas></div><div id="mcConfusion" class="matrix-wrap"></div></article>
+          <article class="dynamic-card lab-card" data-card><div class="card-topline"><div><span class="kicker">3 · RESIDUOS</span><h2>Error e importancia</h2></div><button class="info-icon" data-info="residuals"><svg><use href="#i-info"/></svg></button></div><button id="analyzeModelBtnLab" class="secondary">Analizar red actual</button><div class="chart-box"><canvas id="residualCanvas" width="760" height="320"></canvas></div><div class="chart-box"><canvas id="residualHistCanvas" width="760" height="320"></canvas></div><div id="importanceTable" class="table-wrap"></div></article>
+          <article class="dynamic-card lab-card" data-card><div class="card-topline"><div><span class="kicker">4 · ROC / PR</span><h2>Threshold binario</h2></div><button class="info-icon" data-info="threshold"><svg><use href="#i-info"/></svg></button></div><label>Threshold <strong id="thresholdValue">0.50</strong><input id="thresholdSlider" type="range" min="0" max="1" step="0.01" value="0.5"></label><div id="thresholdMetrics" class="summary-grid four"></div><div class="chart-box"><canvas id="rocCanvas" width="700" height="320"></canvas></div><div class="chart-box"><canvas id="prCanvas" width="700" height="320"></canvas></div></article>
+          <article class="dynamic-card lab-card" data-card><div class="card-topline"><div><span class="kicker">5 · LEARNING CURVE</span><h2>Error vs cantidad de datos</h2></div><button class="info-icon" data-info="classiccurve"><svg><use href="#i-info"/></svg></button></div><button id="runClassicCurveBtn" class="secondary">Calcular curva</button><div class="chart-box"><canvas id="classicCurveCanvas" width="900" height="360"></canvas></div><div id="classicCurveText" class="diagnosis-box"></div></article>
+          <article class="dynamic-card lab-card level-advanced" data-card><div class="card-topline"><div><span class="kicker">6 · GRID SEARCH</span><h2>Hiperparámetros</h2></div><button class="info-icon" data-info="gridsearch"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Neuronas<input id="gridHidden" value="4,8,12"></label><label>Learning rates<input id="gridLR" value="0.01,0.03"></label><label>Activaciones<input id="gridActs" value="relu,tanh,gelu,swish"></label><label>Épocas<input id="gridEpochs" type="number" value="60"></label></div><button id="runGridSearchBtn" class="secondary">Ejecutar</button><div id="gridSearchResults" class="table-wrap"></div></article>
+          <article class="dynamic-card lab-card level-advanced" data-card><div class="card-topline"><div><span class="kicker">7 · SERIES TEMPORALES</span><h2>RNN / LSTM / GRU</h2></div><button class="info-icon" data-info="sequence"><svg><use href="#i-info"/></svg></button></div><div class="controls-grid compact"><label>Serie<select id="seqColumn"></select></label><label>Modelo<select id="seqModel"><option value="rnn">RNN</option><option value="lstm">LSTM</option><option value="gru">GRU</option></select></label><label>Ventana<input id="seqWindow" type="number" value="5"></label><label>Épocas<input id="seqEpochs" type="number" value="120"></label></div><button id="trainSequenceBtn" class="secondary">Entrenar secuencia</button><div class="summary-grid four"><div><span>Train loss</span><b id="seqTrainLoss">—</b></div><div><span>Val loss</span><b id="seqValLoss">—</b></div><div><span>RMSE</span><b id="seqRMSE">—</b></div><div><span>Modelo</span><b id="seqModelName">—</b></div></div><div class="chart-box"><canvas id="seqLossCanvas" width="900" height="340"></canvas></div><div class="chart-box"><canvas id="seqPredCanvas" width="900" height="340"></canvas></div></article>
+        
+          <article class="dynamic-card lab-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">AVANZADO · FUNDAMENTOS</span><h2>Vanishing Gradients & LR Schedules</h2></div></div>
+            <div id="vanishingLabBox"></div>
+            <div id="lrScheduleLabBox" style="margin-top:18px"></div>
+          </article>
+          <article class="dynamic-card lab-card size-lg" data-card>
+            <div class="card-topline"><div><span class="kicker">AVANZADO · NO SUPERVISADO</span><h2>Autoencoder · Anomalías</h2></div>
+            <button class="secondary" id="exportModelBtn" title="Exportar modelo entrenado">Exportar modelo</button></div>
+            <div id="autoencoderLabBox"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+</div>
+
+<nav class="mobile-nav" aria-label="Navegación móvil">
+  <button class="nav-btn active" data-tab="home"><svg><use href="#i-result"/></svg><span>Inicio</span></button>
+  <button class="nav-btn" data-tab="data"><svg><use href="#i-data"/></svg><span>Datos</span></button>
+  <button class="nav-btn" data-tab="networks"><svg><use href="#i-network"/></svg><span>Modelo</span></button>
+  <button class="nav-btn" data-tab="train"><svg><use href="#i-train"/></svg><span>Entrenar</span></button>
+  <button class="nav-btn" data-tab="results"><svg><use href="#i-result"/></svg><span>Resultados</span></button>
+</nav>
+
+<div id="infoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+  <div class="modal-panel info-panel">
+    <button id="closeInfoBtn" class="modal-close" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button>
+    <span id="infoCategory" class="eyebrow">CONCEPTO</span>
+    <h2 id="infoTitle">Información</h2>
+    <div id="infoFormula" class="formula-card math-display"></div>
+    <div class="info-sections">
+      <section><h3>Definición</h3><p id="infoText"></p></section>
+      <section><h3>¿Para qué sirve?</h3><p id="infoUse"></p></section>
+      <section><h3>Variables</h3><div id="infoVariables" class="symbol-list"></div></section>
+      <section><h3>Ejemplo industrial</h3><p id="infoExample"></p></section>
+      <section><h3>Error común</h3><p id="infoError"></p></section>
+    </div>
+  </div>
+</div>
+
+<div id="inputDialog" class="modal" role="dialog" aria-modal="true">
+  <form class="modal-panel small-dialog" id="inputDialogForm">
+    <button type="button" id="inputDialogClose" class="modal-close"><svg><use href="#i-close"/></svg></button>
+    <span class="eyebrow">EDITAR</span><h2 id="inputDialogTitle">Dato</h2>
+    <label id="inputDialogLabel">Valor<input id="inputDialogValue" autocomplete="off"></label>
+    <div class="actions"><button type="button" id="inputDialogCancel">Cancelar</button><button type="submit" class="primary">Guardar</button></div>
+  </form>
+</div>
+
+<div id="reportModal" class="modal report-modal" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+  <div class="modal-panel report-modal-panel">
+    <div class="report-modal-head"><div><span class="eyebrow">REPORT BUILDER</span><h2 id="reportModalTitle">Vista previa del informe</h2></div><button id="closeReportModalBtn" class="modal-close" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button></div>
+    <iframe id="reportPreviewFrame" class="report-preview-frame" title="Vista previa del informe"></iframe>
+  </div>
+</div>
+
+<script src="js/data-core.js"></script>
+<script src="js/ml-engine.js"></script>
+<script src="js/labs.js"></script>
+<script src="js/v9-stats.js"></script>
+<script src="js/v9-ui.js"></script>
+<script src="js/v9-app.js"></script>
+<script src="js/v91-enhancements.js"></script>
+<script src="js/v92-problems.js"></script>
+<script src="js/v93-ucn.js"></script>
+<script src="js/v94-data-loss-fix.js"></script>
+<script src="js/v95-advanced-nn.js"></script>
+<script src="js/v96-neural-academy.js"></script>
+<script src="js/v97-product-suite.js"></script>
+<script src="js/v98-guided-learning.js"></script>
+<script src="js/v99-visual-intelligence.js"></script>
+<script src="js/v100-training-zoom.js"></script>
+
+<script>
+/* LAB Industrial premium interactions */
+(function(){
+  function initPremium(){
+    document.querySelectorAll('.premium-flip-card').forEach(function(card){
+      if(card.dataset.ready) return;
+      card.dataset.ready='1';
+      function flip(){ card.classList.toggle('is-flipped'); }
+      card.addEventListener('click', flip);
+      card.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); flip(); }
+      });
+    });
+
+    var targets=document.querySelectorAll('.dynamic-card,.sales-banner,.premium-flip-card,.section-block');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('reveal-in');
+            io.unobserve(entry.target);
+          }
+        });
+      },{threshold:0.08});
+      targets.forEach(function(el){ el.classList.add('reveal-ready'); io.observe(el); });
+    } else {
+      targets.forEach(function(el){ el.classList.add('reveal-in'); });
+    }
+
+    document.querySelectorAll('.dynamic-card').forEach(function(card){
+      if(card.dataset.tiltReady) return;
+      card.dataset.tiltReady='1';
+      card.addEventListener('pointermove',function(e){
+        if(window.innerWidth<1000) return;
+        var r=card.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width-.5;
+        var y=(e.clientY-r.top)/r.height-.5;
+        card.style.setProperty('--tiltX',(-y*2.5)+'deg');
+        card.style.setProperty('--tiltY',(x*3.5)+'deg');
+      });
+      card.addEventListener('pointerleave',function(){
+        card.style.setProperty('--tiltX','0deg');
+        card.style.setProperty('--tiltY','0deg');
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initPremium);
+  else initPremium();
+})();
+</script>
+
+</body>
+</html>
